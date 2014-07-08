@@ -38,10 +38,8 @@
             this.labelPort = new System.Windows.Forms.Label();
             this.buttonApply = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.checkBoxMagnet = new System.Windows.Forms.CheckBox();
-            this.checkBoxTorrent = new System.Windows.Forms.CheckBox();
-            this.checkBoxNZB = new System.Windows.Forms.CheckBox();
-            this.checkBoxEd2k = new System.Windows.Forms.CheckBox();
+            this.checkBoxCurrent = new System.Windows.Forms.CheckBox();
+            this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelUsername
@@ -78,7 +76,7 @@
             // 
             // textBoxIP
             // 
-            this.textBoxIP.Location = new System.Drawing.Point(76, 58);
+            this.textBoxIP.Location = new System.Drawing.Point(245, 6);
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(100, 20);
             this.textBoxIP.TabIndex = 4;
@@ -87,7 +85,7 @@
             // labelIPAddress
             // 
             this.labelIPAddress.AutoSize = true;
-            this.labelIPAddress.Location = new System.Drawing.Point(12, 61);
+            this.labelIPAddress.Location = new System.Drawing.Point(181, 9);
             this.labelIPAddress.Name = "labelIPAddress";
             this.labelIPAddress.Size = new System.Drawing.Size(61, 13);
             this.labelIPAddress.TabIndex = 5;
@@ -95,7 +93,7 @@
             // 
             // textBoxPort
             // 
-            this.textBoxPort.Location = new System.Drawing.Point(76, 84);
+            this.textBoxPort.Location = new System.Drawing.Point(245, 32);
             this.textBoxPort.MaxLength = 5;
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(100, 20);
@@ -105,7 +103,7 @@
             // labelPort
             // 
             this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(12, 87);
+            this.labelPort.Location = new System.Drawing.Point(181, 35);
             this.labelPort.Name = "labelPort";
             this.labelPort.Size = new System.Drawing.Size(29, 13);
             this.labelPort.TabIndex = 7;
@@ -113,7 +111,7 @@
             // 
             // buttonApply
             // 
-            this.buttonApply.Location = new System.Drawing.Point(164, 110);
+            this.buttonApply.Location = new System.Drawing.Point(270, 58);
             this.buttonApply.Name = "buttonApply";
             this.buttonApply.Size = new System.Drawing.Size(75, 23);
             this.buttonApply.TabIndex = 8;
@@ -123,7 +121,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(245, 110);
+            this.buttonExit.Location = new System.Drawing.Point(270, 87);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 9;
@@ -131,55 +129,33 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // checkBoxMagnet
+            // checkBoxCurrent
             // 
-            this.checkBoxMagnet.AutoSize = true;
-            this.checkBoxMagnet.Location = new System.Drawing.Point(182, 8);
-            this.checkBoxMagnet.Name = "checkBoxMagnet";
-            this.checkBoxMagnet.Size = new System.Drawing.Size(139, 17);
-            this.checkBoxMagnet.TabIndex = 10;
-            this.checkBoxMagnet.Text = "Associate Magnet Links";
-            this.checkBoxMagnet.UseVisualStyleBackColor = true;
+            this.checkBoxCurrent.AutoSize = true;
+            this.checkBoxCurrent.Location = new System.Drawing.Point(15, 62);
+            this.checkBoxCurrent.Name = "checkBoxCurrent";
+            this.checkBoxCurrent.Size = new System.Drawing.Size(208, 17);
+            this.checkBoxCurrent.TabIndex = 10;
+            this.checkBoxCurrent.Text = "Associate magnet links for current user";
+            this.checkBoxCurrent.UseVisualStyleBackColor = true;
             // 
-            // checkBoxTorrent
+            // checkBoxAll
             // 
-            this.checkBoxTorrent.AutoSize = true;
-            this.checkBoxTorrent.Location = new System.Drawing.Point(182, 35);
-            this.checkBoxTorrent.Name = "checkBoxTorrent";
-            this.checkBoxTorrent.Size = new System.Drawing.Size(133, 17);
-            this.checkBoxTorrent.TabIndex = 11;
-            this.checkBoxTorrent.Text = "Associate Torrent Files";
-            this.checkBoxTorrent.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxNZB
-            // 
-            this.checkBoxNZB.AutoSize = true;
-            this.checkBoxNZB.Location = new System.Drawing.Point(182, 61);
-            this.checkBoxNZB.Name = "checkBoxNZB";
-            this.checkBoxNZB.Size = new System.Drawing.Size(121, 17);
-            this.checkBoxNZB.TabIndex = 12;
-            this.checkBoxNZB.Text = "Associate NZB Files";
-            this.checkBoxNZB.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxEd2k
-            // 
-            this.checkBoxEd2k.AutoSize = true;
-            this.checkBoxEd2k.Location = new System.Drawing.Point(182, 87);
-            this.checkBoxEd2k.Name = "checkBoxEd2k";
-            this.checkBoxEd2k.Size = new System.Drawing.Size(123, 17);
-            this.checkBoxEd2k.TabIndex = 13;
-            this.checkBoxEd2k.Text = "Associate ed2k Files";
-            this.checkBoxEd2k.UseVisualStyleBackColor = true;
+            this.checkBoxAll.AutoSize = true;
+            this.checkBoxAll.Location = new System.Drawing.Point(15, 87);
+            this.checkBoxAll.Name = "checkBoxAll";
+            this.checkBoxAll.Size = new System.Drawing.Size(190, 17);
+            this.checkBoxAll.TabIndex = 11;
+            this.checkBoxAll.Text = "Associate magnet links for all users";
+            this.checkBoxAll.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 138);
-            this.Controls.Add(this.checkBoxEd2k);
-            this.Controls.Add(this.checkBoxNZB);
-            this.Controls.Add(this.checkBoxTorrent);
-            this.Controls.Add(this.checkBoxMagnet);
+            this.ClientSize = new System.Drawing.Size(362, 121);
+            this.Controls.Add(this.checkBoxAll);
+            this.Controls.Add(this.checkBoxCurrent);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonApply);
             this.Controls.Add(this.labelPort);
@@ -214,10 +190,8 @@
         private System.Windows.Forms.Label labelPort;
         private System.Windows.Forms.Button buttonApply;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.CheckBox checkBoxMagnet;
-        private System.Windows.Forms.CheckBox checkBoxTorrent;
-        private System.Windows.Forms.CheckBox checkBoxNZB;
-        private System.Windows.Forms.CheckBox checkBoxEd2k;
+        private System.Windows.Forms.CheckBox checkBoxCurrent;
+        private System.Windows.Forms.CheckBox checkBoxAll;
 
     }
 }
