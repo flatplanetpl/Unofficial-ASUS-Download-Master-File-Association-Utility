@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace Download_Master_Torrent_Association_Tool
 {
@@ -17,10 +18,6 @@ namespace Download_Master_Torrent_Association_Tool
             textBoxIP.Text = Properties.Settings.Default.IPAddress;
             textBoxPort.Text = Properties.Settings.Default.Port;
 
-            checkBoxEd2k.Checked = Properties.Settings.Default.ed2k;
-            checkBoxMagnet.Checked = Properties.Settings.Default.Magnet;
-            checkBoxNZB.Checked = Properties.Settings.Default.NZB;
-            checkBoxTorrent.Checked = Properties.Settings.Default.Torrent;
         }
 
         private void buttonApply_Click(object sender, EventArgs e)
@@ -30,12 +27,50 @@ namespace Download_Master_Torrent_Association_Tool
             Properties.Settings.Default.IPAddress = textBoxIP.Text;
             Properties.Settings.Default.Port = textBoxPort.Text;
 
-            Properties.Settings.Default.ed2k = checkBoxEd2k.Checked;
-            Properties.Settings.Default.Magnet = checkBoxMagnet.Checked;
-            Properties.Settings.Default.NZB = checkBoxNZB.Checked;
-            Properties.Settings.Default.Torrent = checkBoxTorrent.Checked;
-
             Properties.Settings.Default.Save();
+
+            if (checkBoxCurrent.Checked)
+            {
+                RegistryKey currentKey = Registry.CurrentUser;
+
+                currentKey = currentKey.OpenSubKey("Software");
+
+                currentKey = currentKey.OpenSubKey("Classes", true);
+
+                currentKey = currentKey.CreateSubKey("magnet");
+
+                currentKey.SetValue("", "URL:Magnet Protocol");
+                currentKey.SetValue("Content Type", "application/x-magnet");
+
+                currentKey.CreateSubKey("DefaultIcon");
+                //Can link icon here is we have one.
+
+                currentKey = currentKey.CreateSubKey("shell");
+                currentKey = currentKey.CreateSubKey("open");
+                currentKey.SetValue("FriendlyAppName", "Download Master");
+
+                currentKey = currentKey.CreateSubKey("command");
+                currentKey.SetValue("", "\"" + Application.ExecutablePath + "\" \"%1\"");
+            }
+
+            if (checkBoxAll.Checked)
+            {
+                RegistryKey rootKey = Registry.ClassesRoot;
+                rootKey = rootKey.CreateSubKey("magnet");
+
+                rootKey.SetValue("", "URL:Magnet Protocol");
+                rootKey.SetValue("Content Type", "application/x-magnet");
+
+                rootKey.CreateSubKey("DefaultIcon");
+                //Can link icon here is we have one.
+
+                rootKey = rootKey.CreateSubKey("shell");
+                rootKey = rootKey.CreateSubKey("open");
+                rootKey.SetValue("FriendlyAppName", "Download Master");
+
+                rootKey = rootKey.CreateSubKey("command");
+                rootKey.SetValue("", "\"" + Application.ExecutablePath + "\" \"%1\"");
+            }
 
             
         }
