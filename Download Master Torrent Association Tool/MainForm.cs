@@ -55,21 +55,28 @@ namespace Download_Master_Torrent_Association_Tool
 
             if (checkBoxAll.Checked)
             {
-                RegistryKey rootKey = Registry.ClassesRoot;
-                rootKey = rootKey.CreateSubKey("magnet");
+                try
+                {
+                    RegistryKey rootKey = Registry.ClassesRoot;
+                    rootKey = rootKey.CreateSubKey("magnet");
 
-                rootKey.SetValue("", "URL:Magnet Protocol");
-                rootKey.SetValue("Content Type", "application/x-magnet");
+                    rootKey.SetValue("", "URL:Magnet Protocol");
+                    rootKey.SetValue("Content Type", "application/x-magnet");
 
-                rootKey.CreateSubKey("DefaultIcon");
-                //Can link icon here is we have one.
+                    rootKey.CreateSubKey("DefaultIcon");
+                    //Can link icon here is we have one.
 
-                rootKey = rootKey.CreateSubKey("shell");
-                rootKey = rootKey.CreateSubKey("open");
-                rootKey.SetValue("FriendlyAppName", "Download Master");
+                    rootKey = rootKey.CreateSubKey("shell");
+                    rootKey = rootKey.CreateSubKey("open");
+                    rootKey.SetValue("FriendlyAppName", "Download Master");
 
-                rootKey = rootKey.CreateSubKey("command");
-                rootKey.SetValue("", "\"" + Application.ExecutablePath + "\" \"%1\"");
+                    rootKey = rootKey.CreateSubKey("command");
+                    rootKey.SetValue("", "\"" + Application.ExecutablePath + "\" \"%1\"");
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    MessageBox.Show("Restart the application with Administrator rights to set file associations for all users");
+                }
             }
 
             
