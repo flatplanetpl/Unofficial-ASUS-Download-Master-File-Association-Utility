@@ -46,7 +46,9 @@ namespace Download_Master_Torrent_Association_Tool
 
                     try
                     {
-                        if (client.DownloadString(url) == "ACK_SUCCESS")
+                        response = client.DownloadString(url);
+
+                        if (response == "ACK_SUCCESS" || response == "ACK_SUCESS")
                         {
                             notifyIcon.BalloonTipIcon = ToolTipIcon.None;
                             response = "Torrent added successfully";

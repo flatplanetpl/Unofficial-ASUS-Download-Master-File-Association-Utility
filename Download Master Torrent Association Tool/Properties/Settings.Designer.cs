@@ -70,5 +70,53 @@ namespace Download_Master_Torrent_Association_Tool.Properties {
                 this["Port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Magnet {
+            get {
+                return ((bool)(this["Magnet"]));
+            }
+            set {
+                this["Magnet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Torrent {
+            get {
+                return ((bool)(this["Torrent"]));
+            }
+            set {
+                this["Torrent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ed2k {
+            get {
+                return ((bool)(this["ed2k"]));
+            }
+            set {
+                this["ed2k"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NZB {
+            get {
+                return ((bool)(this["NZB"]));
+            }
+            set {
+                this["NZB"] = value;
+            }
+        }
     }
 }

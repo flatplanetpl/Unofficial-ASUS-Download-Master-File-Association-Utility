@@ -16,6 +16,11 @@ namespace Download_Master_Torrent_Association_Tool
             textBoxPassword.Text = Properties.Settings.Default.Password;
             textBoxIP.Text = Properties.Settings.Default.IPAddress;
             textBoxPort.Text = Properties.Settings.Default.Port;
+
+            checkBoxEd2k.Checked = Properties.Settings.Default.ed2k;
+            checkBoxMagnet.Checked = Properties.Settings.Default.Magnet;
+            checkBoxNZB.Checked = Properties.Settings.Default.NZB;
+            checkBoxTorrent.Checked = Properties.Settings.Default.Torrent;
         }
 
         private void buttonApply_Click(object sender, EventArgs e)
@@ -25,7 +30,14 @@ namespace Download_Master_Torrent_Association_Tool
             Properties.Settings.Default.IPAddress = textBoxIP.Text;
             Properties.Settings.Default.Port = textBoxPort.Text;
 
+            Properties.Settings.Default.ed2k = checkBoxEd2k.Checked;
+            Properties.Settings.Default.Magnet = checkBoxMagnet.Checked;
+            Properties.Settings.Default.NZB = checkBoxNZB.Checked;
+            Properties.Settings.Default.Torrent = checkBoxTorrent.Checked;
+
             Properties.Settings.Default.Save();
+
+            
         }
 
         private void textBoxPort_KeyPress(object sender, KeyPressEventArgs e)
