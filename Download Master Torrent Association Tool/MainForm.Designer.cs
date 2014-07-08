@@ -1,4 +1,4 @@
-﻿namespace Download_Master_Torrent_Association_Tool
+﻿namespace Download_Master_Magnet_Association_Tool
 {
     partial class MainForm
     {

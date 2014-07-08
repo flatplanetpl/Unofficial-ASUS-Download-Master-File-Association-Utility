@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
 
-namespace Download_Master_Torrent_Association_Tool
+namespace Download_Master_Magnet_Association_Tool
 {
     public partial class MainForm : Form
     {
@@ -79,7 +79,7 @@ namespace Download_Master_Torrent_Association_Tool
                 }
             }
 
-            
+            MessageBox.Show("Settings Saved Successfully");
         }
 
         private void textBoxPort_KeyPress(object sender, KeyPressEventArgs e)

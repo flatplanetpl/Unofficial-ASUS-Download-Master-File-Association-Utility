@@ -1,4 +1,4 @@
-﻿namespace Download_Master_Torrent_Association_Tool.Properties {
+﻿namespace Download_Master_Magnet_Association_Tool.Properties {
     
     
     // This class allows you to handle specific events on the settings class:
