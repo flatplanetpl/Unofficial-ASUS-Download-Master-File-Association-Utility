@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Download_Master_Magnet_Association_Tool</RootNamespace>
-    <AssemblyName>Download Master Torrent Association Tool</AssemblyName>
+    <AssemblyName>Download Master Magnet Association Tool</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
