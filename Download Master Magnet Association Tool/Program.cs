@@ -16,8 +16,11 @@ namespace Download_Master_Magnet_Association_Tool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //args = magnet link from association
             if (args.Length == 0)
             {
+                //If run directly by user, show settings.
                 Application.Run(new MainForm());
             }
             else
@@ -32,6 +35,8 @@ namespace Download_Master_Magnet_Association_Tool
 
                 if (link.Substring(0, 6).Equals("magnet"))
                 {
+                    link = Uri.EscapeDataString(link); //Make magnet link websafe for Download Master.
+
                     string username = Properties.Settings.Default.Username;
                     string password = Properties.Settings.Default.Password;
                     string ipAddress = Properties.Settings.Default.IPAddress;
@@ -44,6 +49,7 @@ namespace Download_Master_Magnet_Association_Tool
 
                     using (WebClient client = new WebClient())
                     {
+                        //Authorize login
                         string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password));
                         client.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
 
