@@ -88,6 +88,7 @@ namespace Download_Master_Magnet_Association_Tool
 
                 notifyIcon.BalloonTipText = response;
                 notifyIcon.ShowBalloonTip(2000);
+                notifyIcon.Visible = false;
 
             }
         }
