@@ -16,6 +16,7 @@ namespace Download_Master_Magnet_Association_Tool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            const int TIME = 3000;
 
             //args = magnet link from association
             if (args.Length == 0)
@@ -87,8 +88,9 @@ namespace Download_Master_Magnet_Association_Tool
                 }
 
                 notifyIcon.BalloonTipText = response;
-                notifyIcon.ShowBalloonTip(2000);
-
+                notifyIcon.ShowBalloonTip(TIME);
+                System.Threading.Thread.Sleep(TIME);
+                notifyIcon.Visible = false;
             }
         }
     }
