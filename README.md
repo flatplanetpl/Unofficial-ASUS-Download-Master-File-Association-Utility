@@ -8,7 +8,7 @@ Unofficial ASUS Download Master File Association Utility
 ##### I am not responsible for any software/hardware problems you may experience.
 
 
-This application was designed to replace ASUS’s official Download Master. The reason for developing it was that I only needed Magnet support, and the official Download Master loads an entire web-browser to pass the URI to the router.
+This application was designed to replace ASUSï¿½s official Download Master. The reason for developing it was that I only needed Magnet support, and the official Download Master loads an entire web-browser to pass the URI to the router.
 This application sends the Magnet URI in a simple GET request to the router, then closes itself again.
 
 ###### Prerequisites:
